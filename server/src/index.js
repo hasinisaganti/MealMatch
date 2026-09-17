@@ -98,4 +98,27 @@ app.get('/api/subscriptions', auth, (req, res) => {
   });
   res.json([...unique.values()].map(subscription => ({ ...subscription, plan: db.plans.find(plan => plan.id === subscription.planId) })));
 });
+app.delete('/api/subscriptions/:id', auth, (req, res) => {
+  const db = readDb();
+  const subscription = db.subscriptions.find(item => item.id === req.params.id && item.studentId === req.user.id && item.status === 'active');
+  if (!subscription) return res.status(404).json({ error: 'Active subscription not found.' });
+  subscription.status = 'cancelled';
+  writeDb(db);
+  res.json({ subscription });
+});
+app.get('/api/provider/dashboard', auth, (req, res) => {
+  if (req.user.role !== 'provider') return res.status(403).json({ error: 'Provider access required.' });
+  const db = readDb();
+  const plans = db.plans.filter(plan => plan.providerId === req.user.id);
+  const orders = db.subscriptions.filter(subscription => plans.some(plan => plan.id === subscription.planId) && subscription.status === 'active');
+  res.json({ plans, orders, earnings: orders.reduce((total, order) => total + (plans.find(plan => plan.id === order.planId)?.price || 0), 0) });
+});
+app.post('/api/plans', auth, (req, res) => {
+  if (req.user.role !== 'provider') return res.status(403).json({ error: 'Provider access required.' });
+  const db = readDb();
+  const plan = { id: id('p'), providerId: req.user.id, rating: 0, reviews: 0, available: true, ...req.body, location: req.body.location || currentUser(db, req.user.id).location };
+  db.plans.push(plan);
+  writeDb(db);
+  res.status(201).json(plan);
+});
 app.listen(4000, () => console.log('MealMatch API on http://localhost:4000'));
