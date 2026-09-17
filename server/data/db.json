@@ -4,21 +4,22 @@
       "id": "u_student",
       "name": "Aarav Sharma",
       "email": "student@mealmatch.test",
-      "password": "$2a$10$VSLpE0WJWtgHZF0bDILTYOYLfHM5Azb5Lszm1qzS0KoGerRbFrMB6",
+      "password": "$2a$10$GmZFkbjGe7Xx9UBF9JRtL.DLvpjSoAcZ2W3WqgkpYqGt6LwwFibnq",
       "role": "student",
       "preferences": {
         "budget": 4500,
-        "diet": "veg",
+        "diet": "non-veg",
         "spice": "medium",
         "allergies": "Peanuts",
-        "location": "Koramangala, Bengaluru"
-      }
+        "location": "Bachupally,Hyderabad"
+      },
+      "location": "Bachupally,Hyderabad"
     },
     {
       "id": "u_cook1",
       "name": "Anita’s Kitchen",
       "email": "anita@mealmatch.test",
-      "password": "$2a$10$VSLpE0WJWtgHZF0bDILTYOYLfHM5Azb5Lszm1qzS0KoGerRbFrMB6",
+      "password": "$2a$10$GmZFkbjGe7Xx9UBF9JRtL.DLvpjSoAcZ2W3WqgkpYqGt6LwwFibnq",
       "role": "provider",
       "verified": true,
       "location": "Koramangala, Bengaluru"
@@ -27,7 +28,7 @@
       "id": "u_cook2",
       "name": "Namma Tiffins",
       "email": "namma@mealmatch.test",
-      "password": "$2a$10$VSLpE0WJWtgHZF0bDILTYOYLfHM5Azb5Lszm1qzS0KoGerRbFrMB6",
+      "password": "$2a$10$GmZFkbjGe7Xx9UBF9JRtL.DLvpjSoAcZ2W3WqgkpYqGt6LwwFibnq",
       "role": "provider",
       "verified": true,
       "location": "HSR Layout, Bengaluru"
@@ -36,7 +37,7 @@
       "id": "u_cook3",
       "name": "Priya Home Foods",
       "email": "priya@mealmatch.test",
-      "password": "$2a$10$VSLpE0WJWtgHZF0bDILTYOYLfHM5Azb5Lszm1qzS0KoGerRbFrMB6",
+      "password": "$2a$10$GmZFkbjGe7Xx9UBF9JRtL.DLvpjSoAcZ2W3WqgkpYqGt6LwwFibnq",
       "role": "provider",
       "verified": false,
       "location": "Koramangala, Bengaluru"
@@ -136,6 +137,46 @@
       "status": "active",
       "startDate": "2026-09-15",
       "nextMeal": "Tomorrow · Dinner"
+    },
+    {
+      "id": "s_1789669609923qtyi",
+      "studentId": "u_student",
+      "planId": "p4",
+      "status": "active",
+      "startDate": "2026-09-17",
+      "nextMeal": "Tomorrow · Lunch"
+    },
+    {
+      "id": "s_1789669625394r6jl",
+      "studentId": "u_student",
+      "planId": "p4",
+      "status": "active",
+      "startDate": "2026-09-17",
+      "nextMeal": "Tomorrow · Lunch"
+    },
+    {
+      "id": "s_1789672983912dcpx",
+      "studentId": "u_student",
+      "planId": "p4",
+      "status": "active",
+      "startDate": "2026-09-17",
+      "nextMeal": "Tomorrow · Lunch"
+    },
+    {
+      "id": "s_1789672994874upxv",
+      "studentId": "u_student",
+      "planId": "p2",
+      "status": "active",
+      "startDate": "2026-09-17",
+      "nextMeal": "Tomorrow · Lunch"
+    },
+    {
+      "id": "s_1789672998207rns2",
+      "studentId": "u_student",
+      "planId": "p2",
+      "status": "active",
+      "startDate": "2026-09-17",
+      "nextMeal": "Tomorrow · Lunch"
     }
   ],
   "feedback": [
