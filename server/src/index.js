@@ -61,7 +61,7 @@ app.get('/api/plans', auth, (req, res) => {
   const db = readDb();
   const user = currentUser(db, req.user.id);
   const location = user.preferences?.location || user.location;
-  res.json(plansAt(db, location).map(plan => ({ ...plan, provider: currentUser(db, plan.providerId)?.name })));
+  res.json(db.plans.filter(plan => plan.available).map(plan => ({ ...plan, provider: currentUser(db, plan.providerId)?.name })));
 });
 app.get('/api/recommendations', auth, (req, res) => {
   const db = readDb();
