@@ -1,0 +1,10 @@
+{
+  "name": "mealmatch-mvp",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "seed": "npm run seed --prefix server",
+    "start": "npm run start --prefix server"
+  },
+  "devDependencies": { "concurrently": "^9.1.0" }
+}
